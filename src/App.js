@@ -1,7 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootPage from "./pages/RootPage";
 import Videos from "./pages/Videos";
+import Home from "./pages/Home";
 import './App.css';
+import VideoDetail from "./pages/VideoDetail";
 
 const router = createBrowserRouter([
   {
@@ -9,9 +11,9 @@ const router = createBrowserRouter([
     element: <RootPage/>,
     errorElement: <div>Not Found</div>,
     children:[
-        {index:true,element:<div>Home</div>},
+        {index:true,element:<Home/>},
         {path:"videos",element:<Videos/>},
-        {path:"videos/:videoId",element:<div>video Detail</div>},
+        {path:"videos/:videoId",element:<VideoDetail/>},
     ]
   },
 ]);
