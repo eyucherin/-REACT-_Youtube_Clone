@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import VideoCard from "../components/VideoCard";
 
 export default function Videos() {
   const [info, setInfo] = useState([]);
-  const [text, setText] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,40 +14,24 @@ export default function Videos() {
     };
     fetchData();
   }, []);
-
-  const handleChange = (event) => {
-    setText(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    navigate(`/videos/${text}`);
-    setText("");
-  };
-
   return (
-    <div>
-      Videos
-      <form>
-        <input
-          type="text"
-          placeholder="video id: "
-          value={text}
-          onChange={handleChange}
-        ></input>
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
-        <ul>
-          {info.map((item) => {
-            console.log(item?.id?.videoId)
-            if (item?.id?.videoId){
-              return <li key={item?.id?.videoId}>{item?.snippet?.title}</li>;
-            }
-            return <li key={item?.id?.channelId}>{item?.snippet?.title}</li>;
-          })}
-        </ul>
-      </form>
+    <div className = "mt-6">
+      <div className = "flex flex-wrap">
+      {info.map((item) => {
+          if (item?.id) {
+            return (
+              <VideoCard
+                title={item?.snippet?.title}
+                thumbnails={item?.snippet?.thumbnails?.medium?.url}
+                channel = {item?.snippet?.channelTitle}
+                time = {item?.snippet?.publishedAt}
+              />
+            );
+          }
+        })}
+
+      </div>
+
     </div>
   );
 }
