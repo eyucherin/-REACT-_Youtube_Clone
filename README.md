@@ -1,11 +1,10 @@
 # Youtube App Clone 
 
 ## Routes: 
- - App (main router)
-    - Root Page (contains outlet)
+ - Index (main router)
+    - App - Root Page (contains outlet)
         - Pages
-            - Home
-            - Video
+            - Videos
             - VideoDetail
 
 ## Navbar --> shared between all pages 
