@@ -112,40 +112,6 @@
       },
       {
         "kind": "youtube#searchResult",
-        "etag": "BIEhp-00sfG0HabrdNAj83L5bYM",
-        "id": {
-          "kind": "youtube#video",
-          "videoId": "mPq9PAZM43M"
-        },
-        "snippet": {
-          "publishedAt": "2022-09-23T13:57:34Z",
-          "channelId": "UCY_WNRa7H0P420fJkOFovtQ",
-          "title": "South Korea vs Costa Rica 2-2 ( Friendlies ) 23/09/2022",
-          "description": "South Korea vs Costa Rica 2-2 ( Friendlies ) 23/09/2022 1-0 H. Hee-chan 28' 2-0 J. Bennette 41' 2-1 J. Bennette 64' 2-2 S.",
-          "thumbnails": {
-            "default": {
-              "url": "https://i.ytimg.com/vi/mPq9PAZM43M/default.jpg",
-              "width": 120,
-              "height": 90
-            },
-            "medium": {
-              "url": "https://i.ytimg.com/vi/mPq9PAZM43M/mqdefault.jpg",
-              "width": 320,
-              "height": 180
-            },
-            "high": {
-              "url": "https://i.ytimg.com/vi/mPq9PAZM43M/hqdefault.jpg",
-              "width": 480,
-              "height": 360
-            }
-          },
-          "channelTitle": "DEL PIERO 10",
-          "liveBroadcastContent": "none",
-          "publishTime": "2022-09-23T13:57:34Z"
-        }
-      },
-      {
-        "kind": "youtube#searchResult",
         "etag": "0TAGfPgdMc6n8zlJxeXJ-wM6CBw",
         "id": {
           "kind": "youtube#video",

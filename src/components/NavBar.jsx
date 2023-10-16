@@ -1,13 +1,17 @@
 import React from "react";
 import logo from "../assets/youtube_logo.svg";
 import menu from "../assets/white_menu_bar.svg";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
+import { useParams } from "react-router-dom";
 
 export default function NavBar() {
+  const { keyword } = useParams();
   const [search, setSearch] = useState("");
-  const nagivate = useNavigate();
+  const navigate = useNavigate();
+
+  useEffect(() => setSearch(keyword || ''), [keyword]);
 
   let handleChange = (e) => {
     setSearch(e.target.value);
@@ -15,12 +19,12 @@ export default function NavBar() {
 
   let submitForm = (e) => {
     e.preventDefault();
-    nagivate(`/videos/${search}`);
+    navigate(`/videos/${search}`);
   };
 
   let handleMenuClick = (e) => {
     e.preventDefault();
-    nagivate(`/`);
+    navigate(`/`);
   };
 
   return (
@@ -42,6 +46,7 @@ export default function NavBar() {
           placeholder="Search"
           className="bg-gray-900  rounded-l-lg w-[100%] h-[50%] p-2 text-white"
           onChange={handleChange}
+          value = {search}
         />
         <button type="submit" className="bg-gray-900 rounded-r-lg">
           <FiSearch
