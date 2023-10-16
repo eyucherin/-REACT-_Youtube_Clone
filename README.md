@@ -9,8 +9,8 @@
 
 ## Navbar --> shared between all pages 
 
--  Search Bar --> search for content and links to VideoDetail
-- Youtube button --> links back to main page
+-  Search Bar --> search for content and links to Video using the `useNavigate` hook called from react router.
+- Youtube button --> links back to main page.
 
 ## External Library --> React Router DOM: 
  - `createBrowserRouter` and `RouterProvider` defined in index.js 
