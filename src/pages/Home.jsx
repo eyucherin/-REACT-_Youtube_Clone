@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="mt-6">
+    </div>
+  );
 }
