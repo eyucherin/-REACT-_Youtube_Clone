@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { calculateDays } from "../functions";
 
 export default function VideoCard(props) {
   const [time, setTime] = useState("");
   useEffect(() => {
-    const originalTimestamp = props.time;
-    const timestampDate = new Date(originalTimestamp);
-    const currentDate = new Date();
-    const timeDifference = currentDate - timestampDate;
-    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const daysAgoString = `${daysDifference} days ago`;
-    setTime(daysAgoString);
+    setTime(calculateDays(props.time));
   }, []);
   return (
     <div className="w-[100vw] sm:w-[50vw] sm:h-[35vw] lg:w-[25vw] lg:h-[20vw] flex flex-col p-3">
