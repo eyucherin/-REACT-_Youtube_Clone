@@ -4,7 +4,8 @@
  - Index (main router --> entry point)
     - App - Root Page (contains outlet)
         - Pages
-            - Videos
+            - Videos -> "/"
+            - SearchVideo -> "/videos/:keyword"
             - VideoDetail
 
 ## Navbar --> shared between all pages 
