@@ -6,20 +6,26 @@ export default function VideoDetail() {
     state: { videoInfo },
   } = useLocation();
 
-  console.log(videoInfo)
-
+  console.log(videoInfo);
 
   return (
     <div className="mt-6">
-      <iframe
-        id="player"
-        type="text/html"
-        width="100%"
-        height="640"
-        src={`http://www.youtube.com/embed/${videoInfo.id}`}
-        frameBorder = "0"
-
-      ></iframe>
+      <div className="mx-[5vw] w-[60%]">
+        <iframe
+          id="player"
+          type="text/html"
+          width="100%"
+          height="500"
+          src={`http://www.youtube.com/embed/${videoInfo.id}`}
+          frameBorder="0"
+        ></iframe>
+        <div className = "text-xl font-bold mt-3">
+          {videoInfo.title}
+        </div>
+        <div className = "text-sm font-bold mt-3">
+          {videoInfo.channel}
+        </div>
+      </div>
     </div>
   );
 }
