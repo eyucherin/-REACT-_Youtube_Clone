@@ -13,7 +13,6 @@ export default function SearchVideo() {
       );
       let data = await response.json();
       setSearch(data?.items);
-      console.log(data?.items);
     };
     fetchData();
   }, [keyword]);
@@ -25,12 +24,13 @@ export default function SearchVideo() {
         if (item?.id) {
           return (
             <VideoSlice
-              key={item?.id?.videoId}
+              id={item?.id?.videoId}
               title={item?.snippet?.title}
               thumbnails={item?.snippet?.thumbnails?.medium?.url}
               channel={item?.snippet?.channelTitle}
               time={item?.snippet?.publishedAt}
               description = {item?.snippet?.description}
+              eTag = {item?.etag}
             />
           );
         }
